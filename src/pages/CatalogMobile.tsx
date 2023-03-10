@@ -4,6 +4,7 @@ import { useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import GridViewIcon from '@mui/icons-material/GridView';
+import { SxProps } from '@mui/system';
 
 import { Car, GetCatalogList } from '../api/CatalogAPI';
 import CatalogCard from '../Components/CatalogCard';
@@ -52,7 +53,7 @@ export default function CatalogMobile({ favorites }: CatalogProps): JSX.Element 
 
   const [horizontalCard, setHorizontalCard] = useState(true);
 
-  const cardContainerPropsMobile = horizontalCard
+  const cardContainerPropsMobile: SxProps = horizontalCard
     ? {
         display: 'flex',
         flexDirection: 'column',

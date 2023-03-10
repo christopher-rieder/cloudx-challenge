@@ -1,10 +1,10 @@
 import { Routes, Route, Link, Navigate } from 'react-router-dom';
 import Catalog from './pages/Catalog';
 import CatalogMobile from './pages/CatalogMobile';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import { useMediaQuery, Theme } from '@mui/material';
 
 export default function App() {
-  const matches = useMediaQuery((theme) => theme.breakpoints.up('lg'));
+  const matches = useMediaQuery((theme: Theme) => theme.breakpoints.up('lg'));
 
   const isMobile = !matches;
   const CatalogComponent = isMobile ? CatalogMobile : Catalog;
