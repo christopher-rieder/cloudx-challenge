@@ -1,0 +1,16 @@
+.alice-carousel__dots {
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.alice-carousel__dots-item:not(.__custom).__active {
+  width: 16px;
+  border-radius: 1000px;
+  background-color: white;
+}
+.alice-carousel__dots-item:not(.__custom) {
+  background-color: #ffffff80;
+}
