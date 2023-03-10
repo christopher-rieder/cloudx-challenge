@@ -1,8 +1,7 @@
-import { Chip, Fab, Typography, CardMedia } from '@mui/material';
+import { Chip, Fab, Typography, CardMedia, Stack, Box } from '@mui/material';
 import { Car, range } from '../api/CatalogAPI';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteIconOutlined from '@mui/icons-material/FavoriteBorderOutlined';
-import { Stack, Box } from '@mui/material';
 import { useState } from 'react';
 import { red } from '@mui/material/colors';
 import AliceCarousel from 'react-alice-carousel';
