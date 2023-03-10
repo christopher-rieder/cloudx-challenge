@@ -151,11 +151,6 @@ async function GetCatalogList(query: CatalogQuery): Promise<CatalogListResponse>
   const uniqCities = _.countBy(items, 'city');
   const cities = Object.entries(uniqCities);
 
-  const total = items.length;
-
-  const from = (page - 1) * perPage;
-  const to = Math.min(from + perPage, total);
-  items = items.slice(from, to);
   if (query.sort) {
     if (query.sort === 'price') {
       items = items.sort((a, b) => b.price - a.price);
@@ -164,6 +159,12 @@ async function GetCatalogList(query: CatalogQuery): Promise<CatalogListResponse>
       items = items.sort((a, b) => a.price - b.price);
     }
   }
+
+  const total = items.length;
+
+  const from = (page - 1) * perPage;
+  const to = Math.min(from + perPage, total);
+  items = items.slice(from, to);
 
   return { items, total, brands, models, years, versions, cities };
 }
